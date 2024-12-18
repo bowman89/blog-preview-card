@@ -1,0 +1,267 @@
+/* --stock styling save--
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+*/
+
+
+/* -- CSS STYLE RESET -- */
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+  font-family: 'Figtree';
+
+}
+
+span{
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--clr-yellow);
+  height: 100vh;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+
+/*
+    9. Create a root stacking context
+  */
+#root,
+#__next {
+  isolation: isolate;
+}
+
+/*----- CSS STYLE RESET END-----*/
+
+
+/*--- Variable setup ---*/
+:root {
+  /*---- Colors ----*/
+  --clr-yellow-hsl: 47, 88%, 63%;
+  --clr-white-hsl: 0, 0%, 100%;
+  --clr-gray-hsl-500: 0, 0%, 42%;
+  --clr-gray-hsl-950: 0, 0%, 7%;
+
+  --clr-yellow: hsl(var(--clr-yellow-hsl));
+  --clr-white: hsl(var(--clr-white-hsl));
+  --clr-light-gray: hsl(var(--clr-gray-hsl-500));
+  --clr-dark-gray: hsl(var(--clr-gray-hsl-950));
+
+  /*---- Font ----*/
+  /* Preset 1 - Extra Bold */
+  --text-preset1-fs-24: 24px;
+  --text-preset1-weight-extra_bold: 800;
+  --text-preset1-lh-150: 150%;
+  --text-preset1-l_spacing-0: 0px;
+
+
+  /* Preset 2 - Medium 16px */
+  --text-preset2-fs-16: 16px;
+  --text-preset2-weight-medium: 500;
+  --text-preset2-lh-150: 150%;
+  --text-preset2-l_spacing: 0px;
+
+  /* Preset 3 - Medium 14px */
+  --text-preset3-fs-14: 14px;
+  --text-preset3-weight-medium: 500;
+  --text-preset3-lh-150: 150%;
+  --text-preset3-l_spacing: 0px;
+
+  /* Preset 3 (BOLD) - Extra Bold */
+  --text-preset3-bold-fs-14: 14px;
+  --text-preset3-bold-weight-extra_bold: 800;
+  --text-preset3-bold-lh-150: 150%;
+  --text-preset3-bold-l_spacing: 0px;
+
+  /*---- Spacings ----*/
+  --spacing-300-24: 24px;
+  --spacing-150-12: 12px;
+  --spacing-100-8: 8px;
+  --spacing-50-5: 4px;
+
+}
+
+/*--- Variable setup End ---*/
+
+/*--- Main Styling Start ---*/
+
+.main_wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  
+}
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: auto;
+  width: 384px;
+  background-color: var(--clr-white);
+  border-radius: 20px;
+  outline: 1px solid hsl(var(--clr-gray-hsl-950));
+  box-shadow: 10px 10px 0px hsl(var(--clr-gray-hsl-950));
+  padding: 24px 24px;
+}
+
+.thumbnail{
+  display: flex;
+  height: 200px;
+  width: 336px;
+  border-radius: 10px;
+  margin-bottom: var(--spacing-300-24);
+  overflow: hidden;
+}
+
+.card_img{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+.category{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-yellow);
+  width: 82px;
+  height: 29px;
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: var(--text-preset3-bold-fs-14);
+  font-weight: var(--text-preset3-bold-weight-extra_bold);
+  line-height: var(--text-preset3-bold-lh-150);
+  letter-spacing: var(--text-preset3-bold-l_spacing);
+  margin-bottom: var(--spacing-150-12);
+}
+
+.publish_date{
+  font-size: var(--text-preset3-fs-14);
+  font-weight: var(--text-preset3-weight-medium);
+  line-height: var(--text-preset3-lh-150);
+  letter-spacing: var(--text-preset3-l_spacing);
+  margin-bottom: var(--spacing-150-12);
+}
+
+.title{
+  font-size: var(--text-preset1-fs-24);
+  font-weight: var(--text-preset1-weight-extra_bold);
+  line-height: var(--text-preset1-lh-150);
+  letter-spacing: var(--text-preset1-l_spacing-0);
+  margin-bottom: var(--spacing-150-12);
+}
+
+.title:hover{
+  color: var(--clr-yellow);
+  cursor: pointer;
+}
+
+.description{
+  font-size: var(--text-preset2-fs-16);
+  font-weight: var(--text-preset2-weight-medium);
+  line-height: var(--text-preset2-lh-150);
+  letter-spacing: var(--text-preset2-l_spacing);
+  color: var(--clr-light-gray);
+  margin-bottom: var(--spacing-150-12);
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100%;
+  gap: var(--spacing-150-12);
+  font-size: var(--text-preset3-bold-fs-14);
+  font-weight: var(--text-preset3-bold-weight-extra_bold);
+  line-height: var(--text-preset3-bold-lh-150);
+  letter-spacing: var(--text-preset3-bold-l_spacing);
+  margin-bottom: 0;
+  padding-bottom: 0;
+  
+}
+
+.author_img{
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 460px){
+  .card {
+    width: 327px;
+    height: auto;
+
+  }
+
+  .thumbnail{
+    display: flex;
+    height: 200px;
+    width: auto;
+    border-radius: 10px;
+    margin-bottom: var(--spacing-300-24);
+    overflow: hidden;
+  }
+  
+  .card_img{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .category{
+    display: flex;
+    height: 26px;
+    width: 73px;
+    font-size: 12px;
+  }
+
+  .publish_date{
+    font-size: 12px;
+
+  }
+
+  .title{
+    font-size: 20px;
+  }
+
+  .description{
+    font-size: 14px;
+  }
+}
+/*--- Main Styling End ---*/
